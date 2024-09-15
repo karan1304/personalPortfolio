@@ -1,0 +1,325 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+
+.contact
+{
+    /* border:1px solid red; */
+    width:100%;
+    padding:40px 0;
+    overflow: hidden;
+}
+
+.container
+{
+    width:90%;
+    height:100%;
+    margin:0px auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+}
+
+.headingContainer
+{
+    width: 100%;
+    /* height: 120px; */
+    text-align: center;
+    padding:20px 0;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading
+{
+    font-size:120px;
+    font-weight: 500px;
+    color:rgba(204,204,204,0.3);
+}
+
+.subHeading
+{
+    font-size:36px;
+    font-weight: 500;
+    color:#000000;
+    position: absolute;
+}
+
+.subHeading::after
+{
+    content:"";
+    display: block;
+    border:2px solid #1CB5E0;
+    margin:5px auto;
+    width: 25%;
+}
+
+.contactForm
+{
+width: 100%;
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+}
+
+.addressContainer
+{
+    padding:20px;
+    width: 30%;
+    display:flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap:10px;
+}
+.address
+{
+    width: 100%;
+    font-size:16px;
+    font-weight: 400;
+    color:#333333;
+}
+
+.phone, .email
+{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size:16px;
+    font-weight: 400;
+    gap:5px;
+    color:#333333;
+    text-wrap:wrap;
+    word-break: break-all;
+    text-decoration: none;
+}
+
+.formContainer
+{
+    width: 100%;
+}
+
+.contactUsForm
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:20px;
+    padding:20px;
+    flex-direction: column;
+}
+
+.firstEmail
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+}
+
+.firstEmail > input
+{
+    width: 50%;
+    height: 30px;
+    padding:10px;
+    border-radius:5px;
+    border:none;
+    outline:none;
+    border:1px solid #cccccc;
+}
+
+.firstEmail > input::placeholder
+{
+    font-size: 18px;
+}
+
+.messageContainer
+{
+    width: 100%;
+}
+.message
+{
+    width: 97%;
+    border-radius:5px;
+    border:none;
+    outline:none;
+    border:1px solid #cccccc;
+    padding:10px;
+}
+
+.message::placeholder
+{
+    font-size:18px;
+}
+
+.buttonContainer
+{
+    width: 100%;
+    padding:10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitButton
+{
+    background-color: #1CB5E0;
+    border:none;
+    width:252px;
+    height: 57px;
+    font-size:20px;
+    font-weight: 500;
+    color:#ffffff;
+    border-radius:50px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,1);
+    cursor: pointer;
+}
+
+.submitButton:hover
+{
+    background-color: rgba(28,181,224,0.8);
+}
+
+.socialMediaContainer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+}
+
+.sicon
+{
+    width:20px;
+    height: 20px;
+    border:1px solid #333333;
+    border-radius:50%;
+    padding:10px;
+    cursor:pointer;
+}
+
+.sicon img
+{
+    width:100%;
+    height: 100%;
+}
+
+.followHeading
+{
+    margin-top:40px;
+    font-size:32px;
+    font-weight: 500;
+}
+
+.addressheading,.formheading
+{
+    font-size:32px;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width:991px) 
+{
+    .detailsContainer
+    {
+        flex-direction: column;
+    }
+    .descriptionContainer
+    {
+        width: 100%;
+    }
+    .personalDetails
+    {
+        width: 100%;
+    }  
+    
+    
+}
+@media only screen and (max-width: 767px)
+{
+    .heading
+    {
+        font-size:6rem;
+    }
+    .contactForm
+    {
+        flex-direction: column-reverse;
+    }
+    .formContainer
+    {
+        width: 100%;
+    }
+    .firstEmail
+    {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .firstEmail > input
+    {
+        width: 97%;
+    }
+    .addressContainer
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:0px auto;
+        padding:0;
+    }
+    .address
+    {
+        text-align: center;
+    } 
+    .phone,.email
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+@media only screen and (max-width: 550px)
+{
+    .heading
+    {
+        font-size:5rem;
+    }
+    .subHeading
+    {
+        font-size:32px;
+    }
+}
+
+@media only screen and (max-width: 450px)
+{
+    .heading
+    {
+        font-size:4rem;
+    }
+    .subHeading
+    {
+        font-size:28px;
+    }
+}
+
+@media only screen and (max-width: 350px)
+{
+    .heading
+    {
+        font-size:3rem;
+    }
+    .subHeading
+    {
+        font-size:24px;
+    }
+}

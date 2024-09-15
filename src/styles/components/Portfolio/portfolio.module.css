@@ -1,0 +1,278 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+
+.portfolio
+{
+    /* border:1px solid red; */
+    width:100%;
+    padding:40px 0;
+    background-color: #F4F4F4;
+    overflow: hidden;
+}
+
+.container
+{
+    width:90%;
+    height:100%;
+    margin:0px auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+}
+
+.headingContainer
+{
+    width: 100%;
+    /* height: 120px; */
+    text-align: center;
+    padding:20px 0;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading
+{
+    font-size:120px;
+    font-weight: 500px;
+    color:rgba(204,204,204,0.3);
+}
+
+.subHeading
+{
+    font-size:36px;
+    font-weight: 500;
+    color:#000000;
+    position: absolute;
+}
+
+.subHeading::after
+{
+    content:"";
+    display: block;
+    border:2px solid #1CB5E0;
+    margin:5px auto;
+    width: 25%;
+}
+
+.workContainer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:20px 0;
+}
+
+.navigation
+{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:10px;
+    padding:10px;
+}
+
+.link
+{
+    text-decoration: none;
+    color:#000000;
+    font-size:16px;
+    font-weight: 500;
+    padding:5px 10px;
+    max-height:100% ;
+    transition: all 0.5 ease-in-out;
+}
+
+.link:hover
+{
+color:#1CB5E0;
+}
+
+.active
+{
+    color:#1CB5E0;
+}
+.active::after
+{
+    content:"";
+    display: block;
+    border:2px solid #1CB5E0;
+    margin:0px auto;
+    width: 100%;
+}
+
+
+/* grid */
+
+.parent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    flex-wrap: wrap;
+    /* padding:20px; */
+    }
+    
+     .foroverlay
+     {
+        width:330px;
+        height: 350px;
+        border-radius:4px;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+        position: relative;
+        cursor: pointer;
+
+     }
+    .Image
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .overlay
+    {
+        position: absolute;
+        top:0px;
+        left:0px;
+        width: 100%;
+        height: 100%;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+    }
+
+    .foroverlay:hover .overlay
+    {
+        background-color: rgba(0, 0, 0, 0.7); 
+        opacity: 0.7;
+    }
+
+    .overlayLink {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+
+
+    }
+    
+    .foroverlay:hover .overlayLink {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+
+
+   .loadMoreContainer
+    {
+        width: 100%;
+        padding:10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loadMoreButton
+    {
+        width:200px;
+        height: 50px;
+        font-size: 16px;
+        background-color: transparent;
+        border:none;
+        outline:none;
+        border:1px solid #333333;
+        cursor: pointer;
+    }
+
+
+    @media screen and (max-width:991px) 
+{
+    .detailsContainer
+    {
+        flex-direction: column;
+    }
+    
+    .personalDetails
+    {
+        width: 100%;
+    }   
+}
+@media only screen and (max-width: 767px)
+{
+    .heading
+    {
+        font-size:6rem;
+    }
+    .workContainer
+    {
+        padding:0px;
+    }
+    .navigation
+    {
+        padding:0;
+        width: 100%;
+    }
+    .link
+    {
+        font-size:15px;
+    }
+}
+
+@media only screen and (max-width: 550px)
+{
+    .heading
+    {
+        font-size:5rem;
+    }
+    
+    .subHeading
+    {
+        font-size:32px;
+    }
+
+    .link
+    {
+        font-size:14px;
+    }
+}
+
+@media only screen and (max-width: 450px)
+{
+    .heading
+    {
+        font-size:4rem;
+    }
+    .subHeading
+    {
+        font-size:28px;
+    }
+
+}
+
+@media only screen and (max-width: 350px)
+{
+    .heading
+    {
+        font-size:3rem;
+    }
+    .subHeading
+    {
+        font-size:24px;
+    }
+}

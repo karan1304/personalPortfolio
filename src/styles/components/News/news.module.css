@@ -1,0 +1,60 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+
+.news
+{
+    width: 100%;
+    padding:40px 0;
+    overflow: hidden;
+    background-color: #F4F4F4;
+}
+
+.container
+{
+    width:90%;
+    height:100%;
+    margin:0px auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap:20px;
+}
+
+.heading
+{
+    font-size:20px;
+    font-weight:600;
+    text-transform: uppercase;
+    color:#D9D9D9;
+    margin-left:20px;
+}
+
+.subheading
+{
+    font-size:32px;
+    font-weight: 600;
+    margin-left:20px;
+}
+
+.newsCardContainer
+{
+    width: auto;
+    padding:0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+@media screen and (max-width:400px)
+{
+    .newsCardContainer
+    {
+        padding:0;
+    }
+}

@@ -1,0 +1,54 @@
+.skillBar
+{
+    width:100%;
+}
+
+.headingContainer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skillName
+{
+    font-size:16px;
+    font-weight: 500;
+    color:#222222;
+}
+
+.skillValue
+{
+    font-size:16px;
+    font-weight: 500;
+    color:#222222;
+}
+
+.progressBarContainer
+{
+    /* width: 100%; */
+    margin-top:10px;
+    /* border:1px solid  orangered; */
+    position: relative;
+}
+
+.progressBar
+{
+    /* border:1px solid blue; */
+    height: 10px;
+    border-radius: 50px;
+    background-color: #cccccc;
+}
+
+.bar
+{
+    position:absolute;
+    height: 10px;
+    top:0;
+    left:0;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    width:50%;
+    background-color: #1CB5E0;
+
+}
