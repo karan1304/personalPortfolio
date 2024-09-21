@@ -1,10 +1,44 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "../../styles/components/Contact/contact.module.css"
 import {SVG} from "../../assets/images/index.js"
 import emailjs from 'emailjs-com';
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 
 const Contact = () => {
+
+
+  const controls = useAnimation()
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: false
+  })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible")
+    } else {
+      controls.start("hidden")
+    }
+  }, [controls, inView])
+
+  const containerVariants = {
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      transition: { 
+        duration: 0.5,
+        type: "spring",
+        damping: 25,
+        stiffness: 100
+      } 
+    },
+    hidden: { 
+      opacity: 0, 
+      scale: 0.8
+    }
+  }
 
     const [formData, setFormData] = useState({
         name: '',
@@ -50,7 +84,11 @@ const Contact = () => {
 
   return (
     <div className={styles.contact} id="contact">
-        <div className={styles.container}>
+        <motion.div ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={containerVariants}
+         className={styles.container}>
             <div className={styles.headingContainer}>
                 <h1 className={styles.heading}>CONTACT</h1>
                 <h1 className={styles.subHeading}>Get In Touch</h1>
@@ -95,7 +133,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
-        </div>
+        </motion.div>
     </div>
   )
 }

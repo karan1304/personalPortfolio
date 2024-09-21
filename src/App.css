@@ -30,3 +30,13 @@
 {
     background-color: tomato;
 }
+
+
+@media screen and (max-width: 991px)
+{
+    .main
+    {
+        position: absolute;
+        top:0px;
+    }
+}

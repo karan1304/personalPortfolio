@@ -11,6 +11,7 @@ import Contact from './components/Contact/Contact';
 import Portfolio from './components/Portfolio/Portfolio';
 import Topbar from './components/Topbar/Topbar';
 
+
 function App() {
   const [count, setCount] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
@@ -41,7 +42,7 @@ function App() {
         <Resume/>
         <News/>
         <Contact/>
-        
+
       </div>
     </div>
     </>

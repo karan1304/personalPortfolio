@@ -1,9 +1,45 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "../../styles/components/News/news.module.css"
 import {SVG} from "../../assets/images/index.js"
 import NewsCard from '../NewsCard/NewsCard.jsx'
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const News = () => {
+
+
+  const controls = useAnimation()
+    const [ref, inView] = useInView({
+      threshold: 0.1,
+      triggerOnce: false
+    })
+  
+    useEffect(() => {
+      if (inView) {
+        controls.start("visible")
+      } else {
+        controls.start("hidden")
+      }
+    }, [controls, inView])
+  
+    const containerVariants = {
+      visible: { 
+        opacity: 1, 
+        scale: 1, 
+        transition: { 
+          duration: 0.5,
+          type: "spring",
+          damping: 25,
+          stiffness: 100
+        } 
+      },
+      hidden: { 
+        opacity: 0, 
+        scale: 0.8
+      }
+    }
+
+
     const newsArr =[
       {
         Image:SVG.NewsOne,  
@@ -26,7 +62,11 @@ const News = () => {
     ]
   return (
     <div className={styles.news}>
-        <div className={styles.container}>
+        <motion.div ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={containerVariants}
+         className={styles.container}>
             <h1 className={styles.heading}>READ</h1>
             <h2 className={styles.subheading}>Latest News</h2>
             <div className={styles.newsCardContainer}>
@@ -36,7 +76,7 @@ const News = () => {
                   ))
                 }
             </div>
-        </div>
+        </motion.div>
     </div>
   )
 }

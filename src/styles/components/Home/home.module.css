@@ -1,6 +1,7 @@
 .home
 {
     background: url('homeBackgroundImage.jpg');
+    background:url('../../../../dist/homeBackgroundImage.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

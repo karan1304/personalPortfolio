@@ -1,8 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "../../styles/components/Portfolio/portfolio.module.css"
 import {SVG} from "../../assets/images/index.js"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const Portfolio = () => {
+
+    const controls = useAnimation()
+    const [ref, inView] = useInView({
+      threshold: 0.1,
+      triggerOnce: false
+    })
+  
+    useEffect(() => {
+      if (inView) {
+        controls.start("visible")
+      } else {
+        controls.start("hidden")
+      }
+    }, [controls, inView])
+  
+    const containerVariants = {
+      visible: { 
+        opacity: 1, 
+        scale: 1, 
+        transition: { 
+          duration: 0.5,
+          type: "spring",
+          damping: 25,
+          stiffness: 100
+        } 
+      },
+      hidden: { 
+        opacity: 0, 
+        scale: 0.8
+      }
+    }
+
+
 
     const [itemsToShow, setItemsToShow] = useState(6);
 
@@ -34,7 +69,11 @@ const Portfolio = () => {
   return (
     <div className={styles.portfolio} id="portfolio">
         
-        <div className={styles.container}>
+        <motion.div ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={containerVariants} 
+        className={styles.container}>
             
             <div className={styles.headingContainer}>
                     <h1 className={styles.heading}>PORTFOLIO</h1>
@@ -51,67 +90,6 @@ const Portfolio = () => {
             </div>
             
             <div className={styles.parent}>
-               {/* { (selected ==='All' || selected ==='Development')  && <div className={`${styles.first} ${styles.foroverlay}`}>
-                    <img src={SVG.TailorMan} className={`${styles.firstImage} ${styles.Image}`}/>
-                    <div className={styles.overlay}>
-                        <a href="https://wondrous-kelpie-26742f.netlify.app/" target="_blank" className={styles.overlayLink}>Tailor Man</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='Development')  && <div className={`${styles.second} ${styles.foroverlay}`}>
-                    <img src={SVG.Groco} className={`${styles.secondImage} ${styles.Image}`}/>
-                    <div className={styles.overlay}>
-                        <a href="https://66276239f876e3987419e417--scintillating-pastelito-981abe.netlify.app/" target="_blank" className={styles.overlayLink}>Groco</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='Design')  && <div className={`${styles.third} ${styles.foroverlay}`}>
-                    <img src={SVG.TailorManFigma} className={`${styles.thirdImage} ${styles.Image}`}/>
-                    <div className={styles.overlay}>
-                        <a href="https://www.figma.com/design/ZAMH8RqGAJ9mrtoknxyeWn/React-project?node-id=0-1&t=y17f2e71TUin0rot-1" target="_blank" className={styles.overlayLink}>TailorMan Figma</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='AI')  && <div className={`${styles.fourth} ${styles.foroverlay}`}>
-                    <img src={SVG.HeyGen} className={`${styles.fourthImage} ${styles.Image}`}/>
-                    <div className={styles.overlay}>
-                        <a href="https://drive.google.com/file/d/1YrsV8_4KAQocR58AghvLQmlrD7czVEBZ/view?usp=drive_link" target="_blank" className={styles.overlayLink}>HeyGen: Text to Video</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='Development')  && <div className={`${styles.fifth} ${styles.foroverlay}`}>
-                    <img src={SVG.Dashboard} className={`${styles.fifthImage} ${styles.Image}`} style={{objectPosition:"center"}}/>
-                    <div className={styles.overlay}>
-                        <a href="https://effulgent-melba-62abef.netlify.app/" target="_blank" className={styles.overlayLink}>Dashboard</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='Design')  && <div className={`${styles.sixth} ${styles.foroverlay}`}>
-                    <img src={SVG.Portfolio} className={`${styles.sixthImage} ${styles.Image}`} />
-                    <div className={styles.overlay}>
-                        <a href="https://www.figma.com/design/7cccVUeHhJEjOCtTZq2qoP/Portfolio?node-id=0-1&t=43VFQlPrtpwHl9JK-1" target="_blank" className={styles.overlayLink}>Peronal Portfolio Figma</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='Development')  && <div className={`${styles.seventh} ${styles.foroverlay}`}>
-                    <img src={SVG.FitClub} className={`${styles.seventhImage} ${styles.Image}`}/>
-                    <div className={styles.overlay}>
-                        <a href="https://subtle-halva-896b47.netlify.app/" target="_blank" className={styles.overlayLink}>Fit Club</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='Development')  && <div className={`${styles.seventh} ${styles.foroverlay}`}>
-                    <img src={SVG.StepLuke} className={`${styles.seventhImage} ${styles.Image}`}/>
-                    <div className={styles.overlay}>
-                        <a href="https://66339564a526c90ef119885c--cerulean-meerkat-36f6ac.netlify.app/" target="_blank" className={styles.overlayLink}>StepLuke</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='Development')  && <div className={`${styles.seventh} ${styles.foroverlay}`}>
-                    <img src={SVG.Mausam} className={`${styles.seventhImage} ${styles.Image}`}/>
-                    <div className={styles.overlay}>
-                        <a href="https://keen-granita-2d2fa9.netlify.app/" target="_blank" className={styles.overlayLink}>Mausam</a>
-                    </div>
-                </div>}
-                { (selected ==='All' || selected ==='Development')  && <div className={`${styles.seventh} ${styles.foroverlay}`}>
-                    <img src={SVG.Notes} className={`${styles.seventhImage} ${styles.Image}`}/>
-                    <div className={styles.overlay}>
-                        <a href="https://663c5cfea718f75abdbe01f5--fluffy-cendol-19687b.netlify.app/" target="_blank" className={styles.overlayLink}>Notes</a>
-                    </div>
-                </div>} */}
-
                 {filteredItems.slice(0, itemsToShow).map(item => (
                     <div key={item.id} className={styles.foroverlay}>
                         <img src={item.img} className={styles.Image} />
@@ -127,7 +105,7 @@ const Portfolio = () => {
                         <button className={styles.loadMoreButton} onClick={loadMoreItems}>Load More</button>
                     </div>
                 )}
-        </div>
+        </motion.div>
 
 
 
