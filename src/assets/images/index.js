@@ -4,7 +4,7 @@ import TwitterIcon from './twitterIcon.png';
 import Karan from './karan.jpeg';
 import TempImage from './tempImage.png';
 import Call from './Call.png';
-import Mail from './mail.png';
+import Mail from './Mail.png';
 import Github from './github.png';
 import LeetCode from './LeetCode.png';
 import Instagram from './instagram.png';
