@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styles from "../../styles/components/Sidebar/Sidebar.module.css"
+import { useState } from 'react'
+import styles from "../../styles/components/Sidebar/sidebar.module.css"
 import {SVG} from "../../assets/images/index.js"
 
 const Sidebar = () => {
