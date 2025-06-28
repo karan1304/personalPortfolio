@@ -10,7 +10,7 @@ import LeetCode from './LeetCode.png';
 import Instagram from './Instagram.png'
 import Twitter from './Twitter.png'
 import Groco from './Groco.jpg';
-import FitClub from './fitClub.jpg';
+import FitClub from './fitclub.jpg';
 import Dashboard from './dashboard.jpeg';
 import Mausam from './mausam.jpg';
 import TailorMan from './tailorMan.jpg';
