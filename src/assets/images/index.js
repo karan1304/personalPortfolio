@@ -3,7 +3,7 @@ import LeetcodeIcon from './leetcodeIcon.png';
 import TwitterIcon from './twitterIcon.png';
 import Karan from './karan.jpeg';
 import TempImage from './tempImage.png';
-import Call from './call.png';
+import Call from './Call.png';
 import Mail from './mail.png';
 import Github from './github.png';
 import LeetCode from './LeetCode.png';
