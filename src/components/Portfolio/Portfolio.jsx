@@ -42,7 +42,7 @@ const Portfolio = () => {
     const [itemsToShow, setItemsToShow] = useState(6);
 
     const allItems = [
-        { id: 1, category: 'Development', img: SVG.TailorMan, link: 'https://wondrous-kelpie-26742f.netlify.app/', label: 'Tailor Man' },
+        { id: 1, category: 'Development', img: SVG.TailorMan, link: 'https://tailorman-chd6.vercel.app/', label: 'Tailor Man' },
         { id: 2, category: 'Development', img: SVG.Groco, link: 'https://66276239f876e3987419e417--scintillating-pastelito-981abe.netlify.app/', label: 'Groco' },
         { id: 3, category: 'Design', img: SVG.TailorManFigma, link: 'https://www.figma.com/design/ZAMH8RqGAJ9mrtoknxyeWn/React-project?node-id=0-1&t=y17f2e71TUin0rot-1', label: 'TailorMan Figma' },
         { id: 4, category: 'AI', img: SVG.HeyGen, link: 'https://drive.google.com/file/d/1YrsV8_4KAQocR58AghvLQmlrD7czVEBZ/view?usp=drive_link', label: 'HeyGen: Text to Video' },
