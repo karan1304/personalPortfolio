@@ -7,7 +7,7 @@ import Call from './Call.png';
 import Mail from './Mail.png';
 import Github from "./GitHub.png";
 import LeetCode from './LeetCode.png';
-import Instagram from './instagram.png';
+import Instagram from './Instagram.png'
 import Twitter from './Twitter.png'
 import Groco from './Groco.jpg';
 import FitClub from './fitClub.jpg';
