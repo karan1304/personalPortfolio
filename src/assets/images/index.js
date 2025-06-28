@@ -13,7 +13,7 @@ import Groco from './Groco.jpg';
 import FitClub from './fitclub.jpg';
 import Dashboard from './dashboard.jpeg';
 import Mausam from './mausam.jpg';
-import TailorMan from './tailorMan.jpg';
+import TailorMan from './tailorman.jpg'
 import StepLuke from './stepluke.jpg';
 import Portfolio from './portfolio.png';
 import TailorManFigma from './tailormanfigma.jpg';
