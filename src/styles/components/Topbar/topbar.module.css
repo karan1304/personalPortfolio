@@ -7,68 +7,88 @@
     flex-direction: column;
     position: fixed;
     background-color: #ffffff;
-    /* border-bottom:1px solid #000000; */
-    box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.12);
     z-index:998;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
+
 .header
 {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
 .headerName
 {
-    padding:10px 20px;
+    padding:14px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size:1.6rem;
-    font-weight: 600;
-    color: #000000;
+    font-size:1.5rem;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: -0.5px;
 }
+
+.headerName span
+{
+    color: #1CB5E0;
+}
+
 .toggle
 {
-    padding:10px 20px;
-    transition: all 0.5s ease-in-out;
+    padding:14px 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .toggle > img
 {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     object-fit: contain;
 }
+
 .menu
 {
     width: 100%;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eeeeee;
 }
+
 .list
 {
-    
-    padding:10px 20px;
+    padding:8px 20px 12px;
     list-style: none;
 }
+
 .item
 {
-    padding:10px 0;
+    padding:11px 0;
     font-size:1rem;
 }
 
 .item:not(:last-of-type)
 {
-    border-bottom:1px solid rgba(47, 79, 79, 0.525);
+    border-bottom:1px solid rgba(0,0,0,0.06);
 }
 
 .link
 {
     text-decoration: none;
     color: #333333;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
 }
 
-
-
+.link:hover
+{
+    color: #1CB5E0;
+}

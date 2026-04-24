@@ -13,25 +13,6 @@
     overflow-y: scroll;
 }
 
-.container>div
-{
-    /* height:100%; */
-
-}
-.c1
-{
-    background-color: aqua;
-}
-.c2
-{
-    background-color: blueviolet;
-}
-.c3
-{
-    background-color: tomato;
-}
-
-
 @media screen and (max-width: 991px)
 {
     .main

@@ -6,10 +6,9 @@
 
 .portfolio
 {
-    /* border:1px solid red; */
     width:100%;
-    padding:40px 0;
-    background-color: #F4F4F4;
+    padding:60px 0;
+    background-color: #F7F9FC;
     overflow: hidden;
 }
 
@@ -22,13 +21,12 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    gap:20px;
+    gap:30px;
 }
 
 .headingContainer
 {
     width: 100%;
-    /* height: 120px; */
     text-align: center;
     padding:20px 0;
     position: relative; 
@@ -40,14 +38,15 @@
 .heading
 {
     font-size:120px;
-    font-weight: 500px;
-    color:rgba(204,204,204,0.3);
+    font-weight: 700;
+    color:rgba(204,204,204,0.25);
+    line-height: 1;
 }
 
 .subHeading
 {
     font-size:36px;
-    font-weight: 500;
+    font-weight: 600;
     color:#000000;
     position: absolute;
 }
@@ -56,9 +55,10 @@
 {
     content:"";
     display: block;
-    border:2px solid #1CB5E0;
-    margin:5px auto;
-    width: 25%;
+    border:3px solid #1CB5E0;
+    margin:8px auto 0;
+    width: 40px;
+    border-radius: 2px;
 }
 
 .workContainer
@@ -67,49 +67,51 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:20px 0;
+    padding:10px 0;
 }
 
 .navigation
 {
-    width:50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap:10px;
+    gap:8px;
     padding:10px;
 }
 
 .link
 {
     text-decoration: none;
-    color:#000000;
-    font-size:16px;
+    color:#555555;
+    font-size:14px;
     font-weight: 500;
-    padding:5px 10px;
-    max-height:100% ;
-    transition: all 0.5 ease-in-out;
+    padding:8px 22px;
+    border-radius: 50px;
+    border: 1.5px solid #dddddd;
+    background-color: #ffffff;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
 }
 
 .link:hover
 {
-color:#1CB5E0;
+    color:#1CB5E0;
+    border-color: #1CB5E0;
 }
 
 .active
 {
-    color:#1CB5E0;
-}
-.active::after
-{
-    content:"";
-    display: block;
-    border:2px solid #1CB5E0;
-    margin:0px auto;
-    width: 100%;
+    color:#ffffff;
+    background-color: #1CB5E0;
+    border-color: #1CB5E0;
+    box-shadow: 0 4px 12px rgba(28,181,224,0.3);
 }
 
+.active::after
+{
+    display: none;
+}
 
 /* grid */
 
@@ -120,88 +122,116 @@ color:#1CB5E0;
     align-items: center;
     gap:20px;
     flex-wrap: wrap;
-    /* padding:20px; */
-    }
+}
     
-     .foroverlay
-     {
-        width:330px;
-        height: 350px;
-        border-radius:4px;
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-        position: relative;
-        cursor: pointer;
+.foroverlay
+{
+    width:330px;
+    height: 240px;
+    border-radius:10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-     }
-    .Image
-    {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 4px;
-    }
+.foroverlay:hover
+{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
 
-    .overlay
-    {
-        position: absolute;
-        top:0px;
-        left:0px;
-        width: 100%;
-        height: 100%;
-        transition: background-color 0.3s ease, opacity 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 4px;
-    }
+.Image
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
 
-    .foroverlay:hover .overlay
-    {
-        background-color: rgba(0, 0, 0, 0.7); 
-        opacity: 0.7;
-    }
+.foroverlay:hover .Image
+{
+    transform: scale(1.05);
+}
 
-    .overlayLink {
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-        text-decoration: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
+.overlay
+{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0) 60%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
+.foroverlay:hover .overlay
+{
+    opacity: 1;
+}
 
-    }
-    
-    .foroverlay:hover .overlayLink {
-        opacity: 1;
-        transform: translateY(0); 
-    }
+.overlayLink {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
+.foroverlay:hover .overlayLink {
+    opacity: 1;
+    transform: translateY(0); 
+}
 
-   .loadMoreContainer
-    {
-        width: 100%;
-        padding:10px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.loadMoreContainer
+{
+    width: 100%;
+    padding:20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .loadMoreButton
-    {
-        width:200px;
-        height: 50px;
-        font-size: 16px;
-        background-color: transparent;
-        border:none;
-        outline:none;
-        border:1px solid #333333;
-        cursor: pointer;
-    }
+.loadMoreButton
+{
+    padding: 12px 40px;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: transparent;
+    color: #333333;
+    border: 2px solid #cccccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    letter-spacing: 0.5px;
+}
 
+.loadMoreButton:hover
+{
+    border-color: #1CB5E0;
+    color: #1CB5E0;
+    background-color: rgba(28,181,224,0.05);
+}
 
-    @media screen and (max-width:991px) 
+@media screen and (max-width:991px) 
 {
     .detailsContainer
     {
@@ -230,7 +260,13 @@ color:#1CB5E0;
     }
     .link
     {
-        font-size:15px;
+        font-size:13px;
+        padding: 7px 18px;
+    }
+    .foroverlay
+    {
+        width: 300px;
+        height: 210px;
     }
 }
 
@@ -248,7 +284,7 @@ color:#1CB5E0;
 
     .link
     {
-        font-size:14px;
+        font-size:13px;
     }
 }
 
@@ -262,7 +298,11 @@ color:#1CB5E0;
     {
         font-size:28px;
     }
-
+    .foroverlay
+    {
+        width: 100%;
+        height: 200px;
+    }
 }
 
 @media only screen and (max-width: 350px)

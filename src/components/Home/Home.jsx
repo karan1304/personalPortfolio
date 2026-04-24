@@ -29,6 +29,9 @@ const Home = () => {
             <p className={styles.location}>based in Delhi, India</p>
             <a href="#contact" className={styles.hireMe}>Hire Me</a>
         </div>
+        <div className={styles.scrollDown}>
+            <span></span>
+        </div>
     </motion.div>
   )
 }

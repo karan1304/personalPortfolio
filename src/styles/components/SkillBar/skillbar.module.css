@@ -8,47 +8,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .skillName
 {
-    font-size:16px;
-    font-weight: 500;
+    font-size:15px;
+    font-weight: 600;
     color:#222222;
 }
 
 .skillValue
 {
-    font-size:16px;
-    font-weight: 500;
-    color:#222222;
+    font-size:14px;
+    font-weight: 600;
+    color:#1CB5E0;
 }
 
 .progressBarContainer
 {
-    /* width: 100%; */
-    margin-top:10px;
-    /* border:1px solid  orangered; */
     position: relative;
-}
-
-.progressBar
-{
-    /* border:1px solid blue; */
-    height: 10px;
+    height: 8px;
     border-radius: 50px;
-    background-color: #cccccc;
+    background-color: #e8e8e8;
+    overflow: hidden;
 }
 
 .bar
 {
-    position:absolute;
-    height: 10px;
+    position: absolute;
+    height: 100%;
     top:0;
     left:0;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
-    width:50%;
-    background-color: #1CB5E0;
-
+    border-radius: 50px;
+    background: linear-gradient(90deg, #1CB5E0 0%, #0d8aaa 100%);
+    transition: width 0.8s ease-in-out;
 }

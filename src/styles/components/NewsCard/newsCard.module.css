@@ -6,20 +6,32 @@
 
 .newsCard
 {
-    max-width:348px;
-    height: 442px;
+    max-width:340px;
+    min-width:280px;
+    flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsCard:hover
+{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.14);
 }
 
 .newsImage
 {
     width: 100%;
-    height: 256px;
+    height: 200px;
+    object-fit: cover;
 }
-
 
 .details
 {
@@ -29,14 +41,17 @@
     flex-direction: column;
     background-color: #ffffff;
     gap:10px;
-    padding:10px;
+    padding:16px;
+    flex: 1;
 }
 
 .tag
 {
-    font-size:16px;
-    font-weight: 400;
+    font-size:12px;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    color:#1CB5E0;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -47,29 +62,48 @@
 .tag>span
 {
     text-transform: lowercase;
-    color:#BBBBBB;
+    color:#AAAAAA;
+    font-weight: 400;
 }
 
 .heading
 {
-    font-size:24px;
-    font-weight: 500;
+    font-size:20px;
+    font-weight: 600;
+    color:#111111;
+    line-height: 1.3;
 }
 
 .desc
 {
-    font-size:16px;
-    font-weight: 300;
-    color:#000000;
+    font-size:14px;
+    font-weight: 400;
+    color:#555555;
     text-align: justify;
+    line-height: 1.6;
+    flex: 1;
 }
 
 .newsLink
 {
     text-decoration: none;
     color:#1CB5E0;
+    font-size:14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 4px;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s ease;
 }
 
-.newsLink:active, .newsLink:hover, .newsLink:visited{
-    color:#1CB5E0
+.newsLink:hover
+{
+    border-bottom-color: #1CB5E0;
+}
+
+.newsLink:active, .newsLink:visited{
+    color:#1CB5E0;
 }

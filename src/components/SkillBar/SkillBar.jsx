@@ -10,11 +10,7 @@ const SkillBar = ({skill , value}) => {
                 <strong className={styles.skillValue}>{`${value}%`}</strong>
             </div>
             <div className={styles.progressBarContainer}>
-                <div className={styles.progressBar}>
-
-                </div>
                 <div className={styles.bar} style={{width:`${value}%`}}>
-
                 </div>
             </div>
         </div>

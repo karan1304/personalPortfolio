@@ -7,13 +7,15 @@
 
 .navbar
 {
-    width:320PX;
+    width:320px;
     height: 100vh;
-    background-color:#222222;
+    background-color:#1a1a1a;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     overflow: auto;
+    position: sticky;
+    top: 0;
 }
 
 .navbarContainer
@@ -23,25 +25,28 @@
     align-items: center;
     flex-direction: column;
     gap:30px; 
-    padding:30px 10px;     
+    padding:40px 10px;     
 }
+
 .profile
 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:10px;
+    gap:12px;
 }
+
 .profile .profileImage
 {
    width:160px;
    height: 160px; 
-   border:5px solid #555555;
+   border:3px solid #1CB5E0;
    border-radius:50%;
    position: relative;
-
+   box-shadow: 0 0 0 5px rgba(28, 181, 224, 0.2), 0 0 20px rgba(28, 181, 224, 0.15);
 }
+
 .profileImage img
 {
     width: 100%;
@@ -56,11 +61,13 @@
     font-size:1.5em;
     color:#ffffff;
     font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .navigation
 {
     padding:10px 20px;
+    width: 100%;
 }
 
 .list
@@ -68,35 +75,41 @@
     list-style: none;
     display:flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
-    gap:15px;
+    gap:6px;
 }
 
 .link
 {
-    font-size:1.2em;
-    color:#ffffff;
+    font-size:1.05em;
+    color:#aaaaaa;
     font-weight: 400;
-    border:1px solid #ffffff;
+    border: none;
+    border-left: 3px solid transparent;
     text-decoration: none;
-    width:120px;
-    padding:10px 20px;
-    text-align: center;
+    width: 100%;
+    padding:12px 20px;
+    text-align: left;
     cursor:pointer;
+    display: block;
+    transition: all 0.25s ease-in-out;
+    border-radius: 0 6px 6px 0;
 }
 
 .link:hover
 {
-    color:#1CB5E0;
-    border:1px solid #1CB5E0;
-    transition: all 0.3s ease-in-out;
+    color:#ffffff;
+    background-color: rgba(255,255,255,0.07);
+    border-left: 3px solid rgba(28,181,224,0.5);
 }
 
 .active
 {
     color:#1CB5E0;
-    border:1px solid #1CB5E0;
+    background-color: rgba(28,181,224,0.12);
+    border-left: 3px solid #1CB5E0;
+    font-weight: 500;
 }
 
 .socialMedia
@@ -104,23 +117,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10px;
+    gap:12px;
 }
 
 .sicon
 {
     width:20px;
     height: 20px;
-    border:1px solid #ffffff;
+    border:1px solid #555555;
     border-radius:50%;
     padding:10px;
     cursor:pointer;
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .sicon:hover
 {
     border:1px solid #1CB5E0;
     background-color:#1CB5E0;
-    transition: all 0.3s ease-in-out;
 }
 
 .sicon img
